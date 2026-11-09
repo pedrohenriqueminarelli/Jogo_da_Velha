@@ -6,6 +6,8 @@ public class Marca
 
     public Marca (char smb) throws Exception
     {
+        if(smb!='x' || smb !='O') throw new Exception("O símbolo precisa ser O ou X!");
+        this.simbolo=smb;
         // validar smb, garantindo que ele
         // seja 'X' ou 'O' e coloca-lo em
         // simbolo
@@ -14,7 +16,7 @@ public class Marca
 
     public char getSimbolo ()
     {
-        // retornar simbolo
+        return this.simbolo;
     }
 
     @Override
@@ -26,12 +28,20 @@ public class Marca
     @Override
     public boolean equals (Object obj)
     {
-        // retornar true se this for igual a obj ou false caso contrario
+        if(this==obj) return true;
+        if(obj==null) return false;
+        if(this.getClass()!=obj.getClass()) return false;
+        Marca M = (Marca)obj;
+        if(this.simbolo!=M.simbolo) return false;
+        return true;
     }
 
     @Override
     public int hashCode ()
     {
-        // faça
+        int ret = 2;
+        ret= ret*2+ ((Character)this.simbolo).hashCode();
+        if (ret<0) ret= -ret;
+        return ret;
     }
 }

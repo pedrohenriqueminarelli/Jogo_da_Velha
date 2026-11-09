@@ -12,6 +12,7 @@ public class Tabuleiro implements Cloneable
 
     public boolean haMarcaNaPosicao (int lin, int col) throws Exception
     {
+        if(this.matriz[lin][col]=='O' || this.matriz)
         // verifico se em matriz[lin][col]
         // tem null, retornando false em caso
         // afirmativo, ou true em caso negativo
