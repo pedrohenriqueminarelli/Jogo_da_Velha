@@ -12,14 +12,16 @@ public class Tabuleiro implements Cloneable
 
     public boolean haMarcaNaPosicao (int lin, int col) throws Exception
     {
-        // verifico se em matriz[lin][col]
-        // tem null, retornando false em caso
-        // afirmativo, ou true em caso negativo
-        // dar excecao caso lin ou col invalido
+        if(lin<1 || col<1 || lin>3 || col>3) throw new Exception("A linha ou a coluna não podem ser maiores que três, e não podem ser menores que 1!");
+        if(matriz[lin][col]==null) return false;
+        return true;
+        
     }
 
     public Marca getMarcaNaPosicao (int lin, int col) throws Exception
     {
+        if(lin<1 || col<1 || lin>3 || col>3) throw new Exception("A linha ou a coluna não podem ser maiores que três, e não podem ser menores que 1!");
+        return matriz[lin][col];
         // retornar a marca que tem em
         // matriz[lin][col]
         // dar excecao caso lin ou col invalido
@@ -27,6 +29,9 @@ public class Tabuleiro implements Cloneable
 
     public void setMarcaNaPosicao (Marca mrc, int lin, int col) throws Exception
     {
+        if(lin<1 || col<1 || lin>3 || col>3) throw new Exception("A linha ou a coluna não podem ser maiores que três, e não podem ser menores que 1!");
+        if(mrc==null) throw new Exception("A marca não pode ser nula!");
+        this.matriz[lin][col]=mrc;
         // colocar mrc em matriz[lin][col],
         // dar excecao caso lin ou col invalido
         // dar excecao caso mrc seja null
@@ -35,6 +40,10 @@ public class Tabuleiro implements Cloneable
     @Override
     public String toString ()
     {
+        String res="";
+        for(int linhas=0; linhas<3; linhas++ ){
+
+        }
         // retornar em um String o tabuleiro
         // formatado para ser exibido na tela
     }
