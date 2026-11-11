@@ -16,7 +16,6 @@ public class Marca
 
     public char getSimbolo ()
     {
-        // retornar simbolo
         return this.simbolo;
     }
 
@@ -40,9 +39,9 @@ public class Marca
     @Override
     public int hashCode ()
     {
-        int ret= 2;
-        ret= ret*2+ ((Character)simbolo).hashCode();
-        if(ret<0) ret=-ret;
+        int ret = 2;
+        ret= ret*2+ ((Character)this.simbolo).hashCode();
+        if (ret<0) ret= -ret;
         return ret;
     }
 }

@@ -15,7 +15,6 @@ public class Tabuleiro implements Cloneable
         if(lin<1 || col<1 || lin>3 || col>3) throw new Exception("A linha ou a coluna não podem ser maiores que três, e não podem ser menores que 1!");
         if(matriz[lin][col]==null) return false;
         return true;
-        
     }
 
     public Marca getMarcaNaPosicao (int lin, int col) throws Exception
