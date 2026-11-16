@@ -40,9 +40,17 @@ public class Tabuleiro implements Cloneable
     public String toString ()
     {
         String res="";
-        for(int linhas=0; linhas<3; linhas++ ){
-
-        }
+        for(int i=0; i<3; i++){
+            for(int j= 0; j<3; j++){
+                res+=matriz[i][j]+ (j<2 ? "|": "\n");
+            }
+            for(int k=0; k<3; k++){
+                if(i<2){
+                res+="-";
+                }
+            }
+        } 
+        return res;
         // retornar em um String o tabuleiro
         // formatado para ser exibido na tela
     }
